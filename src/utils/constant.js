@@ -9,10 +9,10 @@ export const USER_AVATAR =
 
 
 export const API_OPTIONS = {
-  method: 'GET',
+  method: "GET",
   headers: {
-    accept: 'application/json',
-    Authorization: 'Bearer'+process.env.REACT_APP_TMDB_KEY,
+    accept: "application/json",
+    Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMWIwODRiMThkZTgxYjNjYjA3M2QzZTY2ZGUwNzIyZiIsInN1YiI6IjY1MjE1ZGQ2YzFmZmJkMDExYjQzNGFhNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.yRNI3WgTMIaEHYuZfR6wUtF7J4LhJG_EbaTBDmIjPsM"
   }
 };
 

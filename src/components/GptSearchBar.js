@@ -19,9 +19,10 @@ const GptSearchBar = () => {
           API_OPTIONS
       );
       const json = await data.json();
-  
       return json.results;
     };
+
+    
 
     const handleGptSearchClick = async () => {
 
@@ -30,16 +31,18 @@ const GptSearchBar = () => {
       searchText.current.value +
       ". only give me names of 5 movies, comma seperated like the example result given ahead. Example Result: Hera Pheri, Dhamaal, Chup Chup Ke, Golmaal, Jane Bhi Do Yaaron";
 
-      const gptResults = await openAI.chat.completions.create({
-        messages: [{ role: "user", content: gptQuery }],
-        model: "gpt-3.5-turbo",
-      });
+      // const gptResults = await openAI.chat.completions.create({
+      //   messages: [{ role: "user", content: gptQuery }],
+      //   model: "gpt-3.5-turbo",
+      // });
 
-      if(!gptResults.choices){
-        //NO Response from OPEN AI GPT API
-      }
+      // if(!gptResults.choices){
+      //   //NO Response from OPEN AI GPT API
+      // }
 
-      const gptMovies = gptResults.choices?.[0]?.message?.content.split(",");
+      //const gptMovies = gptResults.choices?.[0]?.message?.content.split(",");
+
+      const gptMovies = ["Andaz Apna Apna", "Hera Pheri", "Chupke Chupke", "Jaane Bhi Do Yaaro", "Padosan"]
 
       const resPromiseArray = gptMovies.map((movieName) => searchMovieFromTMDB(movieName));
 
@@ -52,8 +55,8 @@ const GptSearchBar = () => {
     };
 
   return (
-    <div className="pt-[10%] flex justify-center">
-        <form className="w-1/2 bg-black grid grid-cols-12" onSubmit={(e) => e.preventDefault()} >
+    <div className="pt-[35%] md:pt-[10%] flex justify-center">
+        <form className="w-full md:w-1/2 bg-black grid grid-cols-12" onSubmit={(e) => e.preventDefault()} >
             <input 
               type="text" 
               className="p-4 m-4 col-span-9" 
